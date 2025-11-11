@@ -1,9 +1,9 @@
 /* jshint esversion: 6 */
 // MODULO DE CALCULADORA v2 - REFACTORIZADO
-var buffer = "0";
-var memoria = 0;
-var ultimo_operador;
-var historial = [];
+let buffer = "0";
+let memoria = 0;
+let ultimo_operador;
+const historial = [];
 
 // Extract Constant: Solución para Magic Number
 const MAX_HISTORY_ITEMS = 5;
@@ -46,12 +46,12 @@ function handleSymbol(symbol) {
         return;
       }
       // Separación de responsabilidades: primero calcula, luego registra
-      var memoriaPrevia = memoria;
-      var bufferValue = parseInt(buffer);
+      const memoriaPrevia = memoria;
+      const bufferValue = parseInt(buffer);
       flushOperation(bufferValue);
       
       // Lógica de historial movida fuera de la función de cálculo
-      var entryIgual = memoriaPrevia + " " + ultimo_operador + " " + bufferValue + " = " + memoria;
+      const entryIgual = memoriaPrevia + " " + ultimo_operador + " " + bufferValue + " = " + memoria;
       logHistory(entryIgual);
       
       ultimo_operador = null;
@@ -72,16 +72,16 @@ function handleMath(symbol) {
   if (buffer === "0" && memoria === 0) {
     return;
   }
-  var intBuffer = parseInt(buffer);
+  const intBuffer = parseInt(buffer);
   if (memoria === 0) {
     memoria = intBuffer;
   } else {
     // Separación de responsabilidades: primero calcula, luego registra
-    var memoriaPrevia = memoria;
+    const memoriaPrevia = memoria;
     flushOperation(intBuffer);
     
     // Lógica de historial movida fuera de la función de cálculo
-    var entryMath = memoriaPrevia + " " + symbol + " " + intBuffer + " = " + memoria;
+    const entryMath = memoriaPrevia + " " + symbol + " " + intBuffer + " = " + memoria;
     logHistory(entryMath);
   }
   ultimo_operador = symbol;
