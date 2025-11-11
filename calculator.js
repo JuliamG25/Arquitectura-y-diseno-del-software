@@ -41,13 +41,13 @@ function handleSymbol(symbol) {
       memoria = 0;
       ultimo_operador = null;
       break;
-    case "=":
+    case "=": {
       if (ultimo_operador === null) {
         return;
       }
       // Separación de responsabilidades: primero calcula, luego registra
       const memoriaPrevia = memoria;
-      const bufferValue = parseInt(buffer);
+      const bufferValue = Number.parseInt(buffer);
       flushOperation(bufferValue);
       
       // Lógica de historial movida fuera de la función de cálculo
@@ -58,6 +58,7 @@ function handleSymbol(symbol) {
       buffer = "" + memoria;
       memoria = 0;
       break;
+    }
     case "+":
     case "-":
     case "*":
@@ -72,7 +73,7 @@ function handleMath(symbol) {
   if (buffer === "0" && memoria === 0) {
     return;
   }
-  const intBuffer = parseInt(buffer);
+  const intBuffer = Number.parseInt(buffer);
   if (memoria === 0) {
     memoria = intBuffer;
   } else {
@@ -106,7 +107,7 @@ function init() {
 }
 
 function buttonClick(value) {
-  if (isNaN(parseInt(value))) {
+  if (Number.isNaN(Number.parseInt(value))) {
     handleSymbol(value);
   } else {
     handleNumber(value);
