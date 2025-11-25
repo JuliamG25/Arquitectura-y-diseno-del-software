@@ -1,7 +1,6 @@
 # Informe Final de Auditoría y Refactorización / Final Audit and Refactoring Report
 
-**Proyecto / Project:** Calculadora Legacy v2  
-**Fecha / Date:** [Fecha]  
+**Proyecto / Project:** Calculadora Legacy v2   
 **Asignatura / Subject:** Arquitectura y Diseño del Software  
 
 ---
