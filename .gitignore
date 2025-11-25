@@ -1,6 +1,4 @@
 # Archivos de reportes y documentación
-*.md
-Reporte*.md
 
 # Dependencias
 node_modules/
