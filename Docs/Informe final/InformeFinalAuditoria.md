@@ -494,25 +494,6 @@ The refactored code complies with SOLID principles, especially:
 - **SRP (Single Responsibility Principle):** ✅ Each function has one responsibility
 - **Open/Closed Principle:** ✅ Extensible without modifying existing code
 
----
-
-## 8. Recomendaciones Futuras / Future Recommendations
-
-**Español:**  
-1. Implementar pruebas unitarias para las funciones refactorizadas
-2. Considerar TypeScript para type safety
-3. Documentar la API de las funciones públicas
-4. Implementar manejo de errores (división por cero, etc.)
-
-**English:**  
-1. Implement unit tests for refactored functions
-2. Consider TypeScript for type safety
-3. Document the API of public functions
-4. Implement error handling (division by zero, etc.)
-
----
-
-**Fin del Informe / End of Report**
 
 ---
 
